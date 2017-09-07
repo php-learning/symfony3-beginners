@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					  <img data-src="img/symfony_logo.png">
+					<h2>Apprendre Symfony 3</h2>
+					<h4>étape 1/5</h4>
+				</section>
+				<section>
+					<h2>Programme</h2>
+					<ol>
+						<li>Présentation</li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer son application</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa première page</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa première entité</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer quelques éléments en BDD à partir d'un formulaire</a></li>
+						<li>Partager ses connaissances avec les nouveaux ! </li>
+					</ol>
+				</section>
+				<section>
+
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

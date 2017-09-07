@@ -4,28 +4,22 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Apprendre Symfony</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/solarized.css">
+		<link rel="stylesheet" href="../assets/css/reveal.css">
+		<link rel="stylesheet" href="../assets/css/theme/solarized.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="../assets/lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+
+
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					  <img data-src="img/symfony_logo.png">
+					  <img data-src="../assets/img/symfony_logo.png">
 					<h2>Apprendre Symfony 3</h2>
 					<h4>étape 1/5</h4>
 				</section>
@@ -40,24 +34,149 @@
 						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer quelques éléments en BDD à partir d'un formulaire</a></li>
 					</ol>
 				</section>
+				<section>
+					<section>
+						<h2>	Programmation Orienté Objet
+						</h2>
+					</section>
+					<section>
+						<h2>
+							Modèle
+						</h2>
+						<img data-src="../assets/img/carinpieces.jpg">
+					</section>
+					<section>
+						<h2> On peut créer ça
+						</h2>
+						<img data-src="../assets/img/website-weldone.jpg">
+					</section>
+					<section>
+						<h2> Ou ça
+						</h2>
+						<img data-src="../assets/img/weirdcar.jpg">
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h2>
+							Composer, la gestion des dépendances
+						</h2>
+					</section>
+					<section>
+						<h3>
+							Télécharge ou met à jour les librairies php utiles pour le projet
+						</h3>
+						<img data-src="../assets/img/logo-composer.png">
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Lignes de commandes
+
+							```
+							composer install
+							```
+							```
+							composer update
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						## Composer.json
+
+						```
+						{
+							"require": {
+								"PHPOffice/PHPExcel": "^1.8",
+								"curl/curl": "^1.6",
+								"doctrine/doctrine-bundle": "^1.6",
+								"doctrine/doctrine-cache-bundle": "^1.2",
+								"doctrine/doctrine-fixtures-bundle": "2.3.0",
+								"doctrine/doctrine-migrations-bundle": "^1.0",
+								"doctrine/orm": "^2.5",
+								"fabpot/goutte": "^3.2",
+								"friendsofsymfony/rest-bundle": "^2.0.0",
+								"friendsofsymfony/user-bundle": "dev-master",
+								"hieu-le/wordpress-xmlrpc-client": "^2.5",
+								"incenteev/composer-parameter-handler": "^2.0",
+								"jms/di-extra-bundle": "dev-master",
+								"jms/serializer-bundle": "dev-master",
+								"lexik/jwt-authentication-bundle": "dev-master",
+								"nelmio/cors-bundle": "^1.5",
+								"nuovo/spreadsheet-reader": "dev-master",
+								"sensio/distribution-bundle": "^5.0",
+								"sensio/framework-extra-bundle": "^3.0.2",
+								"simple-bus/symfony-bridge": "^4.1",
+								"symfony/monolog-bundle": "^3.0.2",
+								"symfony/polyfill-apcu": "^1.0",
+								"symfony/swiftmailer-bundle": "^2.3.10",
+								"symfony/symfony": "3.3.*",
+								"sendinblue/sendinblue-api-bundle": "2.0.*"
+							},
+							"require-dev": {
+								"sensio/generator-bundle": "^3.0",
+								"symfony/phpunit-bridge": "^3.0"
+							}
+						}
+
+
+
+						```
+						</script>
+					</section>
+					<section>
+						<h3>Installation</h3>
+						<p>
+						https://getcomposer.org/doc/00-intro.md
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Symfony, les composants réutilisables
+
+						</h2>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Les composants sont faciles à réutiliser et adapter
+
+							#### Exemple :
+
+							```
+							composer require swiftmailer/swiftmailer
+							```
+
+						</script>
+					</section>
+				</section>
+				<section>
+					<h2>
+						Symfony Full-Stack, le framework
+					</h2>
+				</section>
+				<section>
+					<h2>
+						Installer Symfony Full-Stack
+					</h2>
+					<ul>
+						<li>
+							Via Composer
+						</li>
+						<li>
+							Via Symfony
+						</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="../assets/lib/js/head.min.js"></script>
+		<script src="../assets/js/reveal.js"></script>
+		<script src="../assets/js/app.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
+
 	</body>
 </html>
