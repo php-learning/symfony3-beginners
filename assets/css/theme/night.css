@@ -14,7 +14,7 @@ body {
 
 .reveal {
   font-family: "Open Sans", sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: normal;
   color: #eee; }
 
@@ -53,16 +53,19 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 3.2045em; }
+  font-size: 3.1291em; }
 
 .reveal h2 {
-  font-size: 1.7935em; }
+  font-size: 1.7513em; }
 
 .reveal h3 {
-  font-size: 1.3175em; }
+  font-size: 1.2865em; }
 
 .reveal h4 {
-  font-size: 0.85em; }
+  font-size: 1.1039em; }
+
+.reveal h5 {
+  font-size: 0.83em; }
 
 .reveal h1 {
   text-shadow: none; }
@@ -286,3 +289,20 @@ body {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*******
+CUSTOM
+ */
+.reveal .text-red {
+  color: #EC644B; }
+
+.reveal .text-green {
+  color: #26A65B; }
+
+.reveal section .left {
+  float: left;
+  width: 50%; }
+
+.reveal section .right {
+  float: left;
+  width: 50%; }

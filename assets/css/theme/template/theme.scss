@@ -62,6 +62,8 @@ body {
 .reveal h2 {font-size: $heading2Size; }
 .reveal h3 {font-size: $heading3Size; }
 .reveal h4 {font-size: $heading4Size; }
+.reveal h5 {font-size: $heading5Size; }
+
 
 .reveal h1 {
 	text-shadow: $heading1TextShadow;
@@ -346,4 +348,23 @@ body {
 		        transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 	}
 
+/*******
+CUSTOM
+ */
+.reveal .text-red {
+	color: #EC644B;
+}
+
+.reveal .text-green {
+	color: #26A65B;
+}
+
+.reveal section .left {
+	float: left;
+	width: 50%;
+}
+.reveal section .right {
+	float: left;
+	width: 50%;
+}
 

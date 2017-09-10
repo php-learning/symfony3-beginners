@@ -1,182 +1,247 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Apprendre Symfony</title>
+    <title>Apprendre Symfony</title>
 
-		<link rel="stylesheet" href="../assets/css/reveal.css">
-		<link rel="stylesheet" href="../assets/css/theme/solarized.css">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/theme/solarized.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../assets/lib/css/zenburn.css">
-
-
-
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					  <img data-src="../assets/img/symfony_logo.png">
-					<h2>Apprendre Symfony 3</h2>
-					<h4>étape 1/5</h4>
-				</section>
-				<section>
-					<h2>Programme</h2>
-					<ol>
-						<li>Présentation</li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer son application</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa première page</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa première entité</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer quelques éléments en BDD à partir d'un formulaire</a></li>
-					</ol>
-				</section>
-				<section>
-					<section>
-						<h2>	Programmation Orienté Objet
-						</h2>
-					</section>
-					<section>
-						<h2>
-							Modèle
-						</h2>
-						<img data-src="../assets/img/carinpieces.jpg">
-					</section>
-					<section>
-						<h2> On peut créer ça
-						</h2>
-						<img data-src="../assets/img/website-weldone.jpg">
-					</section>
-					<section>
-						<h2> Ou ça
-						</h2>
-						<img data-src="../assets/img/weirdcar.jpg">
-					</section>
-
-				</section>
-				<section>
-					<section>
-						<h2>
-							Composer, la gestion des dépendances
-						</h2>
-					</section>
-					<section>
-						<h3>
-							Télécharge ou met à jour les librairies php utiles pour le projet
-						</h3>
-						<img data-src="../assets/img/logo-composer.png">
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							### Lignes de commandes
-
-							```
-							composer install
-							```
-							```
-							composer update
-							```
-						</script>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-						## Composer.json
-
-						```
-						{
-							"require": {
-								"PHPOffice/PHPExcel": "^1.8",
-								"curl/curl": "^1.6",
-								"doctrine/doctrine-bundle": "^1.6",
-								"doctrine/doctrine-cache-bundle": "^1.2",
-								"doctrine/doctrine-fixtures-bundle": "2.3.0",
-								"doctrine/doctrine-migrations-bundle": "^1.0",
-								"doctrine/orm": "^2.5",
-								"fabpot/goutte": "^3.2",
-								"friendsofsymfony/rest-bundle": "^2.0.0",
-								"friendsofsymfony/user-bundle": "dev-master",
-								"hieu-le/wordpress-xmlrpc-client": "^2.5",
-								"incenteev/composer-parameter-handler": "^2.0",
-								"jms/di-extra-bundle": "dev-master",
-								"jms/serializer-bundle": "dev-master",
-								"lexik/jwt-authentication-bundle": "dev-master",
-								"nelmio/cors-bundle": "^1.5",
-								"nuovo/spreadsheet-reader": "dev-master",
-								"sensio/distribution-bundle": "^5.0",
-								"sensio/framework-extra-bundle": "^3.0.2",
-								"simple-bus/symfony-bridge": "^4.1",
-								"symfony/monolog-bundle": "^3.0.2",
-								"symfony/polyfill-apcu": "^1.0",
-								"symfony/swiftmailer-bundle": "^2.3.10",
-								"symfony/symfony": "3.3.*",
-								"sendinblue/sendinblue-api-bundle": "2.0.*"
-							},
-							"require-dev": {
-								"sensio/generator-bundle": "^3.0",
-								"symfony/phpunit-bridge": "^3.0"
-							}
-						}
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../assets/lib/css/zenburn.css">
 
 
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <img data-src="../assets/img/symfony_logo.png">
+            <h2>Apprendre Symfony 3</h2>
+            <h4>étape 1/5</h4>
+        </section>
+        <section>
+            <h2>Programme</h2>
+            <ol>
+                <li>Présentation</li>
+                <li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a>
+                </li>
+                <li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
+                    son application</a></li>
+                <li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
+                    première page</a></li>
+                <li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa
+                    première entité</a></li>
+                <li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
+                    quelques éléments en BDD à partir d'un formulaire</a></li>
+            </ol>
+        </section>
+        <section>
+            <section>
+                <h2>Programmation Orienté Objet</h2>
+            </section>
+            <section>
+                <h3>Ancien système</h3>
+                <h4>Procédurale</h4>
+                <ul>
+                    <li>Très verbeux</li>
+                    <li>Complexe à maintenir</li>
+                    <li>Facile à comprendre pour les débutants</li>
+                </ul>
+                <pre><code data-trim data-noescape class="php6">
+						$mysqli = mysqli_connect("example.com", "user", "password", "database");
+						$res = mysqli_query($mysqli, "SELECT 'Please, do not use ' AS _msg FROM DUAL");
+						$row = mysqli_fetch_assoc($res);
+						echo $row['_msg'];
+					</code></pre>
+            </section>
+            <section>
+                <h3>Programmation Orienté Objet</h3>
+                <ul>
+                    <li>Paradigme (style de programmation informatique) élaboré dans les années 1960</li>
+                    <li>Intégré à PHP dans sa version 5 (13 juillet 2004)</li>
+                    <li>Composition :</li>
+                </ul>
+                <pre class="fragment" data-fragment-index="0"><code data-trim data-noescape class="php6">
+<span class="fragment" data-fragment-index="1">class Person
+{
+  <span class="fragment" data-fragment-index="2">private $firstname; // Ceci est une propriété (property) ou un attribut (attribut)</span>
 
-						```
-						</script>
-					</section>
-					<section>
-						<h3>Installation</h3>
-						<p>
-						https://getcomposer.org/doc/00-intro.md
-						</p>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>
-							Symfony, les composants réutilisables
+  <span class="fragment" data-fragment-index="3">/**
+      Ceci est une méthode (method)
+  */
+  public function getFirstname()
+  {
 
-						</h2>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							### Les composants sont faciles à réutiliser et adapter
+  }</span>
+}</span>
+                </code></pre>
+            </section>
+        </section>
 
-							#### Exemple :
+        <section>
+            <section>
+                <h2>
+                    Composer, la gestion des dépendances
+                </h2>
+            </section>
+            <section>
+                <h3>Composer</h3>
+                <ul>
+                    <li>gestionnaire de paquets libre écrit en PHP</li>
+                    <li>Edité par Nils Adermann et Jordi Boggiano en mars 2012</li>
+                    <li>Permet d'installer les librairies dont le projet dépend</li>
+                    <li>Projet disponible sur la plateforme Github</li>
+                </ul>
+                <img data-src="../assets/img/logo-composer.png">
+            </section>
+            <section>
+                <h2>Composer.json</h2>
+                <ul>
+                    <li>Fichier unique pour chaque site</li>
+                    <li>Permet de définir de façon textuelle les dépendances</li>
+                    <li>Permet de séparer les plugins requis en
+                        <span class="fragment text-red" data-fragment-index="0">production</span>
+                        <span class="fragment" data-fragment-index="1"> et en <span
+                                class="text-red">développement</span></span></li>
+                </ul>
+                <pre><code data-trim data-noescape class="json">
+                    {
+                        <span class="fragment" data-fragment-index="0">require": {
+                            "curl/curl": "^1.6",
+                            "sensio/framework-extra-bundle": "^3.0.2",
+                            "simple-bus/symfony-bridge": "^4.1",
+                            "sendinblue/sendinblue-api-bundle": "2.0.*"
+                        },</span>
+                        <span class="fragment" data-fragment-index="1">require-dev": {
+                            "sensio/generator-bundle": "^3.0",
+                            "symfony/phpunit-bridge": "^3.0"
+                        }</span>
+                    }
+                </code></pre>
+            </section>
+            <section>
+                <h3>Composer en ligne de commande</h3>
+                <pre class="fragment"><code data-trim data-noescape class="shell">$> composer install</code></pre>
+                <pre class="fragment"><code data-trim data-noescape class="shell">$> composer update</code></pre>
+                <p><br></p>
+                <h3 class="fragment">Installation</h3>
+                <p class="fragment">
+                    <a href="https://getcomposer.org/doc/00-intro.md">https://getcomposer.org/doc/00-intro.md</a>
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>
+                    Symfony, les composants réutilisables
+                </h2>
+            </section>
+            <section>
+                <h3>Un peu d'histoire</h3>
+                <ul>
+                    <li>Ecrit par Fabien Potencier et sa société SensioLabs</li>
+                    <li>3 versions :
+                        <ul>
+                            <li>Première version : sortie en octobre 2005 et abandon en 2012</li>
+                            <li>Seconde version : sortie en juillet 2011 et réécriture complète pour PHP5.5+</li>
+                            <li>Troisième version : sortie le 30 novembre 2015 (continuité de la version 2.8)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>
+                    Les composants
+                </h3>
+                <ul>
+                    <li>Ensemble de <span class="text-red">54</span> composants réutilisables</li>
+                    <li class="fragment">Offre des fonctionnalités modulaires, <span class="fragment">adaptable</span> <span class="fragment text-red">et surtout universelle</span></li>
+                    <li class="fragment">Utilisé par :
+                        <ul>
+                            <li>Drupal 8</li>
+                            <li>eZ (anciennement eZ Publish)</li>
+                            <li>Magento</li>
+                            <li>Thélia 2</li>
+                            <li>Bolt</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Les principaux composants</h3>
+                <div class="left">
+                    <ul>
+                        <li>HttpKernel</li>
+                        <li>HttpFoundation</li>
+                        <li>Routing</li>
+                        <li>Security</li>
+                        <li>Guard</li>
+                        <li>Translation</li>
+                        <li>Config</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>Yaml</li>
+                        <li>Filesystem</li>
+                        <li>Form</li>
+                        <li>Validator</li>
+                        <li>Templating</li>
+                        <li>Console</li>
+                        <li>Debug</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h3>Ajouter une dépendance</h3>
+                <pre><code class="shell">composer require symfony/yaml</code></pre>
+                <p><br></p>
+                <h4>Le fichier <span class="text-green">composer.json</span> s'édite tout seul</h4>
+                <pre><code data-trim data-noescape class="json">
+                    {
+                        require": {
+                            "curl/curl": "^1.6",
+                            "sensio/framework-extra-bundle": "^3.0.2",
+                            "simple-bus/symfony-bridge": "^4.1",
+                            "sendinblue/sendinblue-api-bundle": "2.0.*",
+                            <span class="text-green">"symfony/yaml": "2.0.*",</span>
+                        },
+                        require-dev": {
+                            "sensio/generator-bundle": "^3.0",
+                            "symfony/phpunit-bridge": "^3.0"
+                        }
+                    }
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <h2>
+                Symfony Full-Stack, le framework
+            </h2>
+        </section>
+        <section>
+            <h2>
+                Installer Symfony Full-Stack
+            </h2>
+            <ul>
+                <li>
+                    Via Composer
+                </li>
+                <li>
+                    Via Symfony
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
 
-							```
-							composer require swiftmailer/swiftmailer
-							```
-
-						</script>
-					</section>
-				</section>
-				<section>
-					<h2>
-						Symfony Full-Stack, le framework
-					</h2>
-				</section>
-				<section>
-					<h2>
-						Installer Symfony Full-Stack
-					</h2>
-					<ul>
-						<li>
-							Via Composer
-						</li>
-						<li>
-							Via Symfony
-						</li>
-					</ul>
-				</section>
-			</div>
-		</div>
-
-		<script src="../assets/lib/js/head.min.js"></script>
-		<script src="../assets/js/reveal.js"></script>
-		<script src="../assets/js/app.js"></script>
+<script src="../assets/lib/js/head.min.js"></script>
+<script src="../assets/js/reveal.js"></script>
+<script src="../assets/js/app.js"></script>
 
 
-	</body>
+</body>
 </html>
