@@ -143,6 +143,7 @@
                 <h3>Un peu d'histoire</h3>
                 <ul>
                     <li>Ecrit par Fabien Potencier et sa société SensioLabs</li>
+                    <li>communauté de plus de 300 000 développeurs</li>
                     <li>3 versions :
                         <ul>
                             <li>Première version : sortie en octobre 2005 et abandon en 2012</li>
@@ -158,14 +159,17 @@
                 </h3>
                 <ul>
                     <li>Ensemble de <span class="text-red">54</span> composants réutilisables</li>
-                    <li class="fragment">Offre des fonctionnalités modulaires, <span class="fragment">adaptable</span> <span class="fragment text-red">et surtout universelle</span></li>
+                    <li class="fragment">Offre des fonctionnalités modulaires, <span class="fragment">adaptable</span>
+                        <span class="fragment text-red">et surtout universelle</span></li>
                     <li class="fragment">Utilisé par :
                         <ul>
                             <li>Drupal 8</li>
+                            <li>Joomla</li>
                             <li>eZ (anciennement eZ Publish)</li>
+                            <li>TYPO3</li>
                             <li>Magento</li>
-                            <li>Thélia 2</li>
-                            <li>Bolt</li>
+                            <li>Prestashop</li>
+                            <li>Laravel</li>
                         </ul>
                     </li>
                 </ul>
@@ -218,22 +222,56 @@
             </section>
         </section>
         <section>
-            <h2>
-                Symfony Full-Stack, le framework
-            </h2>
+            <section>
+                <h2>
+                    Symfony, le framework
+                </h2>
+            </section>
+            <section>
+                <h3>Framework ? Késako ?</h3>
+                <ul>
+                    <li>ensemble de composants qui sert à créer les fondations, l'architecture et les grandes lignes d'un logiciel</li>
+                    <li>respecter certains patrons de conception</li>
+                    <li>les bibliothèques le constituant sont alors organisées selon le même paradigme</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Symfony anciennement Symfony FullStack</h4>
+                <ul>
+                    <li>Orienté Service</li>
+                    <li>Basé sur une architecture MVC (Modèle, Vue, Controller)</li>
+                    <li>Utilise un controller frontale (app.php)</li>
+                    <li>utilisé par des géants du Web : Yahoo, M6 Web, Ted, Dailymotion, Groupe Figaro, Maisons du
+                        Monde, ...
+                    </li>
+                </ul>
+                <img src="../assets/img/symfony2-references.png" alt="">
+            </section>
         </section>
         <section>
-            <h2>
+            <h3>
                 Installer Symfony Full-Stack
-            </h2>
-            <ul>
-                <li>
-                    Via Composer
-                </li>
-                <li>
-                    Via Symfony
-                </li>
-            </ul>
+            </h3>
+            <p>
+                Via Composer
+            </p>
+            <pre><code
+                    class="shell">composer create-project symfony/framework-standard-edition my_project_name</code></pre>
+            <p>
+                Via Symfony
+            </p>
+            <pre><code data-trim class="shell">
+                # Linux and macOS systems
+                 sudo mkdir -p /usr/local/bin
+                 sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
+                 sudo chmod a+x /usr/local/bin/symfony
+
+                # Windows systems
+                 php -r "file_put_contents('symfony', file_get_contents('https://symfony.com/installer'));"
+
+                # Installation du projet
+                symfony new my_project_name
+            </code></pre>
         </section>
     </div>
 </div>
