@@ -4,64 +4,89 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Créer son bundle</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/solarized.css">
+		<link rel="stylesheet" href="../assets/css/reveal.css">
+		<link rel="stylesheet" href="../assets/css/theme/solarized.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="../assets/lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					  <img data-src="img/symfony_logo.png">
+					<img data-src="../assets/img/bundle.jpg">
 					<h2>Apprendre Symfony 3</h2>
-					<h4>étape 1/5</h4>
+					<h4>étape 2/5</h4>
+					<h5>Créer son Bundle</h5>
 				</section>
 				<section>
-					<h2>Programme</h2>
+					<section>
+						<h2>C'est quoi un Bundle ? </h2>
+					</section>
+					<section>
+						<h2>L'équivalent d'un plugin, sauf que :</h2>
+						<ol>
+							<li  class="fragment" data-fragment-index="0">Symfony est constitué de bundles</li>
+							<li  class="fragment" data-fragment-index="1">Ils sont donc facile a réutiliser</li>
+							<li  class="fragment" data-fragment-index="2">et facile à construire et distribuer</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Un bundle implémente une fonctionalité, il rassemble :</h2>
+						<ul>
+							<li  class="fragment" data-fragment-index="0">les fichiers php</li>
+							<li  class="fragment" data-fragment-index="1">les templates</li>
+							<li  class="fragment" data-fragment-index="2">CSS</li>
+							<li  class="fragment" data-fragment-index="3">JS</li>
+							<li  class="fragment" data-fragment-index="3">les tests</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>L'autoloader</h2>
+						<h4>( Deux formats : PSR-0 et PSR-4 )</h4>
+					</section>
+					<section>
+						<h3>Règles pour les noms de bundle</h3>
+						<ol>
+							<li>CameCase ! </li>
+							<li>2 mots</li>
+							<li>Suffixer avec Bundle</li>
+							<li>ex: FirstBundle</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section>
+						
+					</section>
+				</section>
+				<section>
+					<h2>Ensuite ? </h2>
 					<ol>
-						<li>Présentation</li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer son application</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa première page</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa première entité</a></li>
-						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer quelques éléments en BDD à partir d'un formulaire</a></li>
-						<li>Partager ses connaissances avec les nouveaux ! </li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
+							son application</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
+							première page</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa
+							première entité</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
+							quelques éléments en BDD à partir d'un formulaire</a></li>
 					</ol>
-				</section>
-				<section>
-
 				</section>
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="../assets/lib/js/head.min.js"></script>
+		<script src="../assets/js/reveal.js"></script>
+		<script src="../assets/js/app.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
+
 	</body>
 </html>
