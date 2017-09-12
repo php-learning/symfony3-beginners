@@ -114,6 +114,35 @@
 				<h5><a href="https://symfony.com/doc/current/contributing/code/standards.html">Règles</a> </h5>
 			</section>
         </section>
+		<section>
+			<section>
+                <h2>Utiliser un Bundle dans un Bundle</h2>
+			</section>
+            <section>
+
+
+            </section>
+		</section>
+            <section>
+                <h4>Parentalité entre les Bundles</h4>
+            </section>
+            <section>
+                <pre><code data-trim data-noescape class="php6">
+                     // src/UserBundle/UserBundle.php
+                    namespace UserBundle;
+
+                    use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+                    class UserBundle extends Bundle
+                    {
+                        public function getParent()
+                        {
+                        return 'FOSUserBundle';
+                        }
+                    }
+                </code></pre>
+
+            </section>
         <section>
             <h2>Ensuite ? </h2>
             <ol>
