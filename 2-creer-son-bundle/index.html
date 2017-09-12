@@ -78,6 +78,7 @@
                 <h2>L' autoloader</h2>
                 <h4>( Deux formats : PSR-0 et PSR-4 )</h4>
             </section>
+            <section></section>
         </section>
         <section>
             <section>
@@ -89,14 +90,14 @@
 						php bin/console generate:bundle
 						</code></pre>
             </section>
-			<section>
-				<h5>Règles pour les noms de bundle</h5>
-				<ul>
-					<li>CameCase !</li>
-					<li>2 mots</li>
-					<li>Suffixer avec Bundle (ex: FirstBundle)</li>
-				</ul>
-			</section>
+            <section>
+                <h5>Règles pour les noms de bundle</h5>
+                <ul>
+                    <li>CameCase !</li>
+                    <li>2 mots</li>
+                    <li>Suffixer avec Bundle (ex: FirstBundle)</li>
+                </ul>
+            </section>
         </section>
         <section>
             <section>
@@ -108,27 +109,110 @@
                     <li>Plus de 3096 bundles</li>
                     <li>Très souvent libre et réutilisable</li>
                     <li>La plupart hébergé sur Github</li>
+                    <li><a href="https://symfony.com/doc/current/contributing/code/standards.html">Standardisé</a></li>
                 </ul>
             </section>
-			<section>
-				<h3>Les standards</h3>
-				<h5><a href="https://symfony.com/doc/current/contributing/code/standards.html">Règles</a> </h5>
-			</section>
-        </section>
-		<section>
-			<section>
-                <h2>Utiliser un Bundle dans un Bundle</h2>
-			</section>
             <section>
-
-
+                <h3>Quelques bundles que même ton chat peut utiliser</h3>
+                <img width="400" src="../assets/img/cat-dev.gif" alt="">
             </section>
-		</section>
+            <section>
+                <h3>FOSUserBundle</h3>
+                <ul>
+                    <li><a href="https://github.com/FriendsOfSymfony/FOSUserBundle">https://github.com/FriendsOfSymfony/FOSUserBundle</a>
+                    </li>
+                    <li>Gestion des utilisateurs</li>
+                    <li>Formulaire d'inscription et de connexion</li>
+                    <li>Formulaire d'oubli et de renvoi de mot de passe</li>
+                </ul>
+            </section>
+            <section>
+                <h3>SonataAdminBundle</h3>
+                <ul>
+                    <li><a href="https://github.com/sonata-project/SonataAdminBundle">https://github.com/sonata-project/SonataAdminBundle</a>
+                    </li>
+                    <li>Génération automatique de back-office</li>
+                    <li>Extensible très facilement</li>
+                    <li>Très bonne modularité des templates et des vues</li>
+                </ul>
+            </section>
+            <section>
+                <h3>MopaBootstrapBundle</h3>
+                <ul>
+                    <li><a href="https://github.com/phiamo/MopaBootstrapBundle">https://github.com/phiamo/MopaBootstrapBundle</a>
+                    </li>
+                    <li>Intégration simplifié de la librairie CSS Bootstrap</li>
+                    <li>Simple d'utilisation</li>
+                    <li>Choix entre les préprocesseurs SASS et LESS</li>
+                </ul>
+            </section>
+            <section>
+                <h3>GenemuFormBundle</h3>
+                <ul>
+                    <li>
+                        <a href="https://github.com/genemu/GenemuFormBundle">https://github.com/genemu/GenemuFormBundle</a>
+                    </li>
+                    <li>Améliorer vos back-office grâce à des champs de formulaire comme :
+                        <ul>
+                            <li>Captcha GD, Recaptcha</li>
+                            <li>Tinymce</li>
+                            <li>JQueryDate</li>
+                            <li>JQueryAutocomplete</li>
+                            <li>JQuerySlider</li>
+                            <li>JQueryFile</li>
+                            <li>JQueryImage</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>BazingaFakerBundle</h3>
+                <ul>
+                    <li><a href="https://github.com/willdurand/BazingaFakerBundle">https://github.com/willdurand/BazingaFakerBundle</a>
+                    </li>
+                    <li>Permet de générer des fausses données très facilement</li>
+                    <li>Tout est dans la configuration</li>
+                    <li>Executable depuis le terminal</li>
+                    <li>Parce que le nom est une référence à Big Bang Theory</li>
+                </ul>
+                <img width="300" src="../assets/img/bazingasheldon.jpg" alt="">
+            </section>
+            <section>
+                <h3>WebProfilerExtraBundle</h3>
+                <ul>
+                    <li><a href="https://github.com/Elao/WebProfilerExtraBundle">https://github.com/Elao/WebProfilerExtraBundle</a>
+                    </li>
+                    <li>Debug de Twig, du Router, du DIC et d'Assetic</li>
+                    <li>Intégration à la Web Debug Toolbar</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Où trouvez des bundles ?</h3>
+                <ul>
+                    <li><a href="http://knpbundles.com/">http://knpbundles.com/</a></li>
+                    <li><a href="https://packagist.org/search/?type=bundle">https://packagist.org/search/?type=bundle</a></li>
+                    <li><a href="https://github.com/">https://github.com/</a></li>
+                    <li><a href="https://www.google.com/?gfe_rd=cr&dcr=0&ei=9_G3WcOqBvGE8QfQjpHoCA&gws_rd=cr&fg=1">https://www.google.com/</a></li>
+                </ul>
+            </section>
+        </section>
         <section>
             <section>
-                <h2>Parentalité entre les Bundles</h2>
+                <h3>Héritage de Bundle</h3>
+                <ul>
+                    <li>Permet de surcharger des fichiers d'un autre bundle</li>
+                    <li>Principales surcharge :
+                        <ul>
+                            <li>Controllers</li>
+                            <li>Templates</li>
+                            <li>Routes</li>
+                        </ul>
+                    </li>
+                </ul>
             </section>
             <section>
+                <h4>Ex : FosUserBundle</h4>
+                <p>Définir le Bundle parent dans le fichier de définition du Bundle</p>
                 <pre><code data-trim data-noescape class="php6">
                      // src/UserBundle/UserBundle.php
                     namespace UserBundle;
@@ -143,23 +227,35 @@
                         }
                     }
                 </code></pre>
+            </section>
+            <section>
+                <h4>Ex : FosUserBundle</h4>
+                <p>Ajouter un fichier qui correspond à un fichier du Bundle parent</p>
+                <pre><code data-trim data-noescape class="php6">
+                    // src/UserBundle/Controller/RegistrationController.php
+                    namespace UserBundle\Controller;
 
+                    use FOS\UserBundle\Controller\RegistrationController as BaseController;
+
+                    class RegistrationController extends BaseController
+                    {
+                        public function registerAction()
+                        {
+                            $response = parent::registerAction();
+
+                            // ... do custom stuff
+                            return $response;
+                        }
+                    }
+                </code></pre>
             </section>
         </section>
         <section>
-            <h2>Ensuite ? </h2>
-            <ol>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
-				<li>Créer son Bundle</li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
-                    son application</a></li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
-                    première page</a></li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa
-                    première entité</a></li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
-                    quelques éléments en BDD à partir d'un formulaire</a></li>
-            </ol>
+            <h2>Des questions ?</h2>
+        </section>
+        <section>
+            <h2>Merci !</h2>
+            <img src="../assets/img/thanks-you2.gif" alt="">
         </section>
     </div>
 </div>
