@@ -17,7 +17,68 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section>
+					<img data-src="../assets/img/symfony_logo.png">
+					<h2>Apprendre Symfony 3</h2>
+					<h5>Configurer son application</h5>
+				</section>
+				<section>
+					<h2>Programme</h2>
+					<ol>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a>
+						</li>
+						<li> Configurer
+							son application</li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
+							première page</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa
+							première entité</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
+							quelques éléments en BDD à partir d'un formulaire</a></li>
+					</ol>
+				</section>
 
+					<section>
+						<h2>Les Paramètres</h2>
+						<h4>parameters.yml</h4>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape class="php6">
+							# This file is auto-generated during the composer install
+							parameters:
+							database_host: 127.0.0.1
+							database_port: null
+							database_name: symfony
+							database_user: root
+							database_password: null
+							mailer_transport: smtp
+							mailer_host: 127.0.0.1
+							mailer_user: null
+							mailer_password: null
+							secret: 42c2d47f87ba5488d9623a24e2ff6c1e6f7b03e4
+						</code></pre>
+					</section>
+					<section>
+						<h3>Secret</h3>
+						<ul>
+							<li>Unique (pour une application)</li>
+							<li>Ajoute de l'entropie à la sécurité</li>
+							<li>Sert pour les cookies</li>
+							<li>Accessible avec kernel.secret</li>
+						</ul>
+					</section>
+				<section>
+					<section>
+						Ressources
+					<a href="https://symfony.com/doc/current/reference/configuration/framework.html">Configurations</a>
+					</section>
+
+				<section>
+
+				</section>
+
+				</section>
 			</div>
 		</div>
 
