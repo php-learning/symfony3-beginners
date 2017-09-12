@@ -75,22 +75,13 @@
         </section>
         <section>
             <section>
-                <h2>L'autoloader</h2>
+                <h2>L' autoloader</h2>
                 <h4>( Deux formats : PSR-0 et PSR-4 )</h4>
-            </section>
-            <section>
-                <h3>Règles pour les noms de bundle</h3>
-                <ol>
-                    <li>CameCase !</li>
-                    <li>2 mots</li>
-                    <li>Suffixer avec Bundle</li>
-                    <li>ex: FirstBundle</li>
-                </ol>
             </section>
         </section>
         <section>
             <section>
-                <h4>Créer son Bundle</h4>
+                <h2>Créer son Bundle</h2>
             </section>
             <section>
                 <h4>Facile ! </h4>
@@ -98,6 +89,14 @@
 						php bin/console generate:bundle
 						</code></pre>
             </section>
+			<section>
+				<h5>Règles pour les noms de bundle</h5>
+				<ul>
+					<li>CameCase !</li>
+					<li>2 mots</li>
+					<li>Suffixer avec Bundle (ex: FirstBundle)</li>
+				</ul>
+			</section>
         </section>
         <section>
             <section>
@@ -108,15 +107,50 @@
                 <ul>
                     <li>Plus de 3096 bundles</li>
                     <li>Très souvent libre et réutilisable</li>
-                    <li>La plus part hébergé sur Github</li>
-                    <li></li>
+                    <li>La plupart hébergé sur Github</li>
                 </ul>
+            </section>
+			<section>
+				<h3>Les standards</h3>
+				<h5><a href="https://symfony.com/doc/current/contributing/code/standards.html">Règles</a> </h5>
+			</section>
+        </section>
+		<section>
+			<section>
+                <h2>Utiliser un Bundle dans un Bundle</h2>
+			</section>
+            <section>
+
+
+            </section>
+		</section>
+        <section>
+            <section>
+                <h2>Parentalité entre les Bundles</h2>
+            </section>
+            <section>
+                <pre><code data-trim data-noescape class="php6">
+                     // src/UserBundle/UserBundle.php
+                    namespace UserBundle;
+
+                    use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+                    class UserBundle extends Bundle
+                    {
+                        public function getParent()
+                        {
+                        return 'FOSUserBundle';
+                        }
+                    }
+                </code></pre>
+
             </section>
         </section>
         <section>
             <h2>Ensuite ? </h2>
             <ol>
                 <li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
+				<li>Créer son Bundle</li>
                 <li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
                     son application</a></li>
                 <li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
