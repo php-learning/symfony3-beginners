@@ -3,7 +3,7 @@
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
         controls: true,
-        progress: true,
+        progress: false,
         keyboard: true,
         overview: true,
         center: true,
