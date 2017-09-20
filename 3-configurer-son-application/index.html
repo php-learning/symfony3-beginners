@@ -39,46 +39,151 @@
 					</ol>
 				</section>
 
-					<section>
-						<h2>Les Paramètres</h2>
-						<h4>parameters.yml</h4>
-					</section>
-					<section>
-						<pre><code data-trim data-noescape class="php6">
-							# This file is auto-generated during the composer install
-							parameters:
-							database_host: 127.0.0.1
-							database_port: null
-							database_name: symfony
-							database_user: root
-							database_password: null
-							mailer_transport: smtp
-							mailer_host: 127.0.0.1
-							mailer_user: null
-							mailer_password: null
-							secret: 42c2d47f87ba5488d9623a24e2ff6c1e6f7b03e4
-						</code></pre>
-					</section>
-					<section>
-						<h3>Secret</h3>
-						<ul>
-							<li>Unique (pour une application)</li>
-							<li>Ajoute de l'entropie à la sécurité</li>
-							<li>Sert pour les cookies</li>
-							<li>Accessible avec kernel.secret</li>
-						</ul>
-					</section>
+                <section>
+                    <section>
+                    <h2>Les Paramètres</h2>
+                    </section>
+                    <section>
+                        <h4>parameters.yml</h4>
+                        <p>Tout ce qui est spécifique à chaque server</p>
+                        <p>Ignoré par défault dans .gitignore</p>
+                        <pre><code data-trim data-noescape class="php6">
+                            # This file is auto-generated during the composer install
+                            parameters:
+                            database_host: 127.0.0.1
+                            database_port: null
+                            database_name: symfony
+                            database_user: root
+                            database_password: null
+                            mailer_transport: smtp
+                            mailer_host: 127.0.0.1
+                            mailer_user: null
+                            mailer_password: null
+                            secret: 42c2d47f87ba5488d9623a24e2ff6c1e6f7b03e4
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h4>Appelé avec %NOMDUPARAMETRE%</h4>
+                        <p>Ex : %secret%</p>
+                    </section>
+                    <section>
+                        <h3>Secret</h3>
+                        <ul>
+                            <li>Unique (pour une application)</li>
+                            <li>Ajoute de l'entropie à la sécurité</li>
+                            <li>Sert pour les cookies</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>parameters.yml.dist</h2>
+                        <p>variables par défault (un "template" pour parameters.yml)</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Le fichier config.yml</h2>
+                    </section>
+                    <section>
+                        <p>Importation d'autres fichiers</p>
+                        <pre><code data-trim data-noescape class="php6">
+                        # app/config/config.yml
+                        imports:
+                        - { resource: parameters.yml }
+                        - { resource: security.yml }
+                        - { resource: services.yml }
+                        </code></pre>
+                    </section>
+                    <section>
+
+                    </section>
+                </section>
+                <!--<section>-->
+                    <!--<section>-->
+                        <!--<h2>framework</h2>-->
+                    <!--</section>-->
+                    <!--<section></section>-->
+                <!--</section>-->
+                <!--<section>-->
+                    <!--<section>-->
+                        <!--<h2>security</h2>-->
+                    <!--</section>-->
+                    <!--<section></section>-->
+                <!--</section>-->
+                <!--<section>-->
+                    <!--<section>twig</section>-->
+                    <!--<section></section>-->
+                <!--</section>-->
+                <section>
+                    <section>
+                        <h2>Sécurité</h2>
+                        <p>security.yml</p>
+                    </section>
+                    <section>
+                        <h4>firewall</h4>
+                        <p>Décide comment les utilisateurs s'authentifient</p>
+                        <ul>
+                            <li>Http</li>
+                            <li>Token API</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>access_control</h4>
+                        <p></p>
+                        <pre><code data-trim data-noescape class="php6">
+                        { path: ^/admin, roles: ROLE_ADMIN }
+                        </code></pre>
+
+                    </section>
+                </section>
 				<section>
+                    <section>
+                        Toutes les configs
+                    </section>
 					<section>
-						Ressources
+                        <pre><code data-trim data-noescape class="php6">
+                            php bin/console config:dump-reference
+                        </code></pre>
+                        <p>exemple</p>
+                        <pre><code data-trim data-noescape class="php6">
+                            php bin/console config:dump-reference twig
+                        </code></pre>
+					</section>
+					<section>
+                    Ressources
 					<a href="https://symfony.com/doc/current/reference/configuration/framework.html">Configurations</a>
 					</section>
 
+				</section>
 				<section>
+                    <section><h2>Les environnements</h2></section>
+                    <section>
 
+                    </section>
+                    <section>
+                        <h4>Les fichiers configs</h4>
+                        <ul>
+                            <li>app/config/config_dev.yml</li>
+                            <li>app/config/config_prod.yml</li>
+                            <li>app/config/config_test.yml</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre><code data-trim data-noescape class="php6">
+                        // app/AppKernel.php
+                        // ...
+                        class AppKernel extends Kernel
+                        {
+                        // ...
+                        public function registerContainerConfiguration(LoaderInterface $loader)
+                        {
+                        $loader->load($this->getProjectDir().'/app/config/config_'.$this->getEnvironment().'.yml');
+                        }
+                        }
+                        </code></pre>
+                    </section>
 				</section>
 
-				</section>
+
 			</div>
 		</div>
 
