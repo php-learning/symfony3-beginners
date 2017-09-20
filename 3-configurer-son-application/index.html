@@ -128,7 +128,7 @@
                     </section>
                     <section>
                         <h4>access_control</h4>
-                        <p></p>
+                        <p>Indique quels utilisateurs peuvent accéder à la page</p>
                         <pre><code data-trim data-noescape class="php6">
                         { path: ^/admin, roles: ROLE_ADMIN }
                         </code></pre>
@@ -137,28 +137,29 @@
                 </section>
 				<section>
                     <section>
+                        <h2>
                         Toutes les configs
+                        </h2>
                     </section>
 					<section>
+                        <p>Les différentes catégories configurables</p>
                         <pre><code data-trim data-noescape class="php6">
                             php bin/console config:dump-reference
                         </code></pre>
-                        <p>exemple</p>
+                        <p>Exemple :</p>
                         <pre><code data-trim data-noescape class="php6">
                             php bin/console config:dump-reference twig
                         </code></pre>
 					</section>
 					<section>
-                    Ressources
+                        <h2>Plus d'information :</h2>
+                        <p>
 					<a href="https://symfony.com/doc/current/reference/configuration/framework.html">Configurations</a>
+                        </p>
 					</section>
-
 				</section>
 				<section>
                     <section><h2>Les environnements</h2></section>
-                    <section>
-
-                    </section>
                     <section>
                         <h4>Les fichiers configs</h4>
                         <ul>
@@ -180,6 +181,15 @@
                         }
                         }
                         </code></pre>
+                    </section>
+                    <section>
+                        <section><h4>On peut tester directement la version de prod en local</h4>
+                        <ul>
+                            <li> dev --> http://127.0.0.1:8000/ ou http://127.0.0.1:8000/app_dev.php
+                            </li>
+                            <li> prod --> http://127.0.0.1:8000/app.php
+                            </li>
+                        </ul></section>
                     </section>
 				</section>
 

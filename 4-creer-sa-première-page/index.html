@@ -17,7 +17,92 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section>
+					<img data-src="../assets/img/symfony_logo.png">
+					<h2>Apprendre Symfony 3</h2>
+					<h5>Créer sa première page</h5>
+				</section>
+				<section>
+					<h2>Programme</h2>
+					<ol>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a>
+						</li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
+							son application</a></li>
+						<li>Créer sa
+							première page</li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa
+							première entité</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
+							quelques éléments en BDD à partir d'un formulaire</a></li>
+					</ol>
+				</section>
 
+				<section>
+					<section><h2>Le routage</h2></section>
+					<section>
+						<pre><code data-trim data-noescape class="php6">
+							// src/AppBundle/Controller/HasardController.php
+							namespace AppBundle\Controller;
+
+							use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+							use Symfony\Component\HttpFoundation\Response;
+							use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+							class HasardController extends Controller
+							{
+									/**
+									 * @Route("/nombre")
+									 */
+									public function numberAction()
+									{
+										$number = mt_rand(0, 100);
+
+								return new Response(
+									'<html><body>Lucky number: '.$number.'</body></html>'
+								);
+
+								return $this->render('nombre.html.twig', array(
+								'number' => $number,
+								));
+								}
+							}
+						</code></pre>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape class="php6">
+						# app/config/routing.yml
+						nombre:
+							resource: "@MeetupBundle/Controller/"
+							type:     annotation
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>Twig</section>
+					<section>
+						<pre><code data-trim data-noescape class="php6">
+						{# app/Resources/views/nombre.html.twig #}
+
+						{% extends '::base.html.twig' %}
+
+
+						{% block body %}
+
+						<h1>Your lucky number is {{ number }}</h1>
+
+						{% endblock %}
+						</code></pre>
+					</section>
+					<section>
+
+					</section>
+				</section>
+				<section>
+					<section>Merci !</section>
+					<section></section>
+				</section>
 			</div>
 		</div>
 
