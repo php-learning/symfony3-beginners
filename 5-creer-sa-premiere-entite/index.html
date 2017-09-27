@@ -17,6 +17,125 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section>
+					<img data-src="../assets/img/symfony_logo.png">
+					<h2>Apprendre Symfony 3</h2>
+					<h5>Créer sa première entité</h5>
+				</section>
+				<section>
+					<h2>Programme</h2>
+					<ol>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a>
+						</li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
+							son application</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
+							première page</a></li>
+						<li>Créer sa
+							première entité</li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
+							quelques éléments en BDD à partir d'un formulaire</a></li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h2>Une entité, c'est quoi ?</h2>
+					</section>
+					<section>
+						<p>Générer une classe entité</p>
+						<pre><code data-trim data-noescape class="php6">
+							// src/MeetupBundle/Entity/Product.php
+
+							namespace MeetupBundle\Entity;
+
+							class Product
+							{
+								private $name;
+								private $price;
+								private $description;
+							}
+
+						</code></pre>
+						<pre><code data-trim data-noescape class="bashrc">
+							php bin/console doctrine:generate:entity
+						</code></pre>
+					</section>
+					<section>
+						<p>Et c'est quoi le mapping ? </p>
+						<img src="../assets/img/mapping_single_entity.png" alt="">
+					</section>
+					<section>
+						<p>Ajouter l'information de mapping</p>
+						<pre><code data-trim data-noescape class="php6">
+							// src/AppBundle/Entity/Product.php
+							namespace AppBundle\Entity;
+
+							use Doctrine\ORM\Mapping as ORM;
+
+							/**
+							 * @ORM\Entity
+							 * @ORM\Table(name="product")
+							 */
+							class Product
+							{
+								/**
+								 * @ORM\Column(type="integer")
+								 * @ORM\Id
+								 * @ORM\GeneratedValue(strategy="AUTO")
+								 */
+								private $id;
+
+								/**
+								 * @ORM\Column(type="string", length=100)
+								 */
+								private $name;
+
+								/**
+								 * @ORM\Column(type="decimal", scale=2)
+								 */
+								private $price;
+
+								/**
+								 * @ORM\Column(type="text")
+								 */
+								private $description;
+							}
+
+						</code></pre>
+					</section>
+					<section>
+						<p>Créer la table</p>
+						<pre><code data-trim data-noescape class="bashrc">
+ 							php bin/console doctrine:database:create
+						</code></pre>
+					</section>
+					<section>
+						<p>Créer les colonnes</p>
+						<pre><code data-trim data-noescape class="bashrc">
+							php bin/console doctrine:schema:create
+						</code></pre>
+					</section>
+					<section>
+						<p>Vérifier que le mapping est correct</p>
+						<pre><code data-trim data-noescape class="bashrc">
+							 php bin/console doctrine:schema:validate
+						</code></pre>
+					</section>
+					<section>
+						<p>Générer les getters et les setters</p>
+						<pre><code data-trim data-noescape class="bashrc">
+							php bin/console	doctrine:generate:entities
+						</code></pre>
+
+					</section>
+					<section>
+						<p>Mettre à jour les colonnes</p>
+						<pre><code data-trim data-noescape class="bashrc">
+							php bin/console doctrine:schema:update --force
+						</code></pre>
+					</section>
+				</section>
 
 			</div>
 		</div>
