@@ -312,6 +312,15 @@ CUSTOM
   float: left;
   width: 50%; }
 
+/*********************************************
+ * MODEL BOX
+ *********************************************/
+.model {
+  display: inline-block;
+  border: 1px solid #3c3c3c; }
+  .model .model-title {
+    font-size: 25.6px; }
+
 .reveal p {
   font-weight: 300;
   text-shadow: 1px 1px #222; }

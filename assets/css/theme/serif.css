@@ -308,3 +308,12 @@ CUSTOM
 .reveal section .right {
   float: left;
   width: 50%; }
+
+/*********************************************
+ * MODEL BOX
+ *********************************************/
+.model {
+  display: inline-block;
+  border: 1px solid #3c3c3c; }
+  .model .model-title {
+    font-size: 25.6px; }
