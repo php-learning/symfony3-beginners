@@ -1,167 +1,168 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Créer son bundle</title>
+		<title>Créer son bundle</title>
 
-    <link rel="stylesheet" href="../assets/css/reveal.css">
-    <link rel="stylesheet" href="../assets/css/theme/solarized.css">
+		<link rel="stylesheet" href="../assets/css/reveal.css">
+		<link rel="stylesheet" href="../assets/css/theme/solarized.css">
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../assets/lib/css/zenburn.css">
-
-
-</head>
-<body>
-<div class="reveal">
-    <div class="slides">
-        <section>
-            <img data-src="../assets/img/symfony_logo.png">
-            <h2>Apprendre Symfony 3</h2>
-            <h5>Créer sa première entité</h5>
-        </section>
-        <section>
-            <h2>Programme</h2>
-            <ol>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a>
-                </li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
-                    son application</a></li>
-                <li>Créer sa
-                    première page
-                </li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa
-                    première entité</a></li>
-                <li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
-                    quelques éléments en BDD à partir d'un formulaire</a></li>
-            </ol>
-        </section>
-        <section>
-            <h2>Prérequis</h2>
-            <ul>
-                <li>Avoir une base de données active</li>
-                <li>Avoir un bundle actif</li>
-                <li>Avoir correctement configurer son application</li>
-                <li>Avoir un controller et une page qui affichent du texte</li>
-            </ul>
-        </section>
-        <section>
-            <section>
-                <h2>L'ORM Doctrine</h2>
-                <ul>
-                    <li>Object-Relation Mapper (lien objet-relation)</li>
-                    <li>Disponible par défaut dans Symfony</li>
-                    <li>Fournit la persistance transparente des objets PHP</li>
-                    <li>Abstrait les requêtes vers la base de données</li>
-                    <li>Change la reflexion de requêtes vers la gestion d'objet</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Une Entité ? Késako ?</h2>
-                <ul>
-                    <li>Simplement une class</li>
-                    <li>Définit des objets fonctionnels</li>
-                    <li>Doit se trouver dans le dossier "Entity" du Bundle</li>
-                </ul>
-                <pre><code class="php6" data-trim data-noescape>
-                    // src/AppBundle/Entity/Product.php
-                    namespace AppBundle\Entity;
-
-                    class Product
-                    {
-                        private $name;
-                        private $price;
-                        private $description;
-                    }
-                </code></pre>
-            </section>
-            <section>
-                <h3>Définir son modèle de données</h3>
-                <ul>
-                    <li class="fragment"><span class="text-red">Ne pas se précipiter</span></li>
-                    <li class="fragment">Toujours se lancer sur papier avant de coder</li>
-                    <li class="fragment">Utiliser des logiciels appropriés :
-                        <ul class="fragment">
-                            <li><a href="http://staruml.io/">StarUML</a></li>
-                            <li><a href="http://www.analysesi.com/">AnalyseSI</a></li>
-                            <li><a href="https://www.mysql.com/fr/products/workbench/">MySQLWorkbench</a></li>
-                            <li><a href="http://www.modelsphere.com/org/fr/open_modelsphere.html">Open ModelSphere</a>
-                            </li>
-                            <li><a href="https://dbdesigner.net/">DbDesigner.net</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <h3>Exemple : Mon premier blog</h3>
-                <div class="fragment left">
-                    <ul>
-                        <li>Category
-                            <ul>
-                                <li>Id</li>
-                                <li>Name</li>
-                                <li>Order</li>
-                                <li>Created date</li>
-                                <li>Updated date</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="fragment left">
-                    <ul>
-                        <li>Article
-                            <ul>
-                                <li>Id</li>
-                                <li>Name</li>
-                                <li>Content</li>
-                                <li>Created date</li>
-                                <li>Updated date</li>
-                                <li>Publish date</li>
-                                <li>Author</li>
-                                <li><span class="text-red">Image</span></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </section>
-        <section>
-            <section>
-                <h3>Générer son entité à partir de la ligne de commande</h3>
-                <pre><code data-trim data-noescape class="sh">php bin/console doctrine:generate:entity</code></pre>
-            </section>
-            <section>
-                <img src="../assets/img/create-entity.png" alt=""/>
-            </section>
-            <section>
-                <img src="../assets/img/create-entity-2.png" alt=""/>
-            </section>
-            <section>
-                <h3>Mise à jour de sa base de données</h3>
-                <p>Si aucun shema n'est actif : </p>
-                <pre><code data-trim data-noescape class="sh">php bin/console doctrine:schema:create</code></pre>
-                <p>Si un shema est déjà actif : </p>
-                <pre><code data-trim data-noescape class="sh">php bin/console doctrine:schema:update --force</code></pre>
-            </section>
-        </section>
-        <section>
-            <section>
-                <h3>Récupérer les entités depuis la base de données</h3>
-                <pre><code data-trim data-noescape class="php6">
-
-                </code></pre>
-            </section>
-        </section>
-    </div>
-</div>
-
-<script src="../assets/lib/js/head.min.js"></script>
-<script src="../assets/js/reveal.js"></script>
-<script src="../assets/js/app.js"></script>
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../assets/lib/css/zenburn.css">
 
 
-</body>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				    <img data-src="../assets/img/symfony_logo.png">
+				    <h2>Apprendre Symfony 3</h2>
+				    <h5>Créer sa première entité</h5>
+				</section>
+				<section>
+				    <h2>Programme</h2>
+				    <ol>
+					<li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
+					<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a>
+					</li>
+					<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
+						son application</a></li>
+					<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
+						première page</a></li>
+					<li>Créer sa
+						première entité</li>
+					<li><a href="https://php-learning.github.io/symfony3-beginners/6-insérer-des-elements-en-bdd">Insérer
+						quelques éléments en BDD à partir d'un formulaire</a></li>
+				    </ol>
+				</section>
+				<section>
+				    <h2>Prérequis</h2>
+				    <ul>
+					<li>Avoir une base de données active</li>
+					<li>Avoir un bundle actif</li>
+					<li>Avoir correctement configurer son application</li>
+					<li>Avoir un controller et une page qui affichent du texte</li>
+				    </ul>
+				</section>
+				<section>
+				    <section>
+					<h2>L'ORM Doctrine</h2>
+					<ul>
+					    <li>Object-Relation Mapper (lien objet-relation)</li>
+					    <li>Disponible par défaut dans Symfony</li>
+					    <li>Fournit la persistance transparente des objets PHP</li>
+					    <li>Abstrait les requêtes vers la base de données</li>
+					    <li>Change la reflexion de requêtes vers la gestion d'objet</li>
+					</ul>
+				    </section>
+				    <section>
+					<h2>Une Entité ? Késako ?</h2>
+					<ul>
+					    <li>Simplement une class</li>
+					    <li>Définit des objets fonctionnels</li>
+					    <li>Doit se trouver dans le dossier "Entity" du Bundle</li>
+					</ul>
+					<pre><code class="php6" data-trim data-noescape>
+					    // src/AppBundle/Entity/Product.php
+					    namespace AppBundle\Entity;
+
+					    class Product
+					    {
+						private $name;
+						private $price;
+						private $description;
+					    }
+					</code></pre>
+				    </section>
+				    <section>
+					<h3>Définir son modèle de données</h3>
+					<ul>
+					    <li class="fragment"><span class="text-red">Ne pas se précipiter</span></li>
+					    <li class="fragment">Toujours se lancer sur papier avant de coder</li>
+					    <li class="fragment">Utiliser des logiciels appropriés :
+						<ul class="fragment">
+						    <li><a href="http://staruml.io/">StarUML</a></li>
+						    <li><a href="http://www.analysesi.com/">AnalyseSI</a></li>
+						    <li><a href="https://www.mysql.com/fr/products/workbench/">MySQLWorkbench</a></li>
+						    <li><a href="http://www.modelsphere.com/org/fr/open_modelsphere.html">Open ModelSphere</a>
+						    </li>
+						    <li><a href="https://dbdesigner.net/">DbDesigner.net</a></li>
+						</ul>
+					    </li>
+					</ul>
+				    </section>
+				    <section>
+					<h3>Exemple : Mon premier blog</h3>
+					<div class="fragment left">
+					    <ul>
+						<li>Category
+						    <ul>
+							<li>Id</li>
+							<li>Name</li>
+							<li>Order</li>
+							<li>Created date</li>
+							<li>Updated date</li>
+						    </ul>
+						</li>
+					    </ul>
+					</div>
+					<div class="fragment left">
+					    <ul>
+						<li>Article
+						    <ul>
+							<li>Id</li>
+							<li>Name</li>
+							<li>Content</li>
+							<li>Created date</li>
+							<li>Updated date</li>
+							<li>Publish date</li>
+							<li>Author</li>
+							<li><span class="text-red">Image</span></li>
+						    </ul>
+						</li>
+					    </ul>
+					</div>
+				    </section>
+				</section>
+				<section>
+				    <section>
+					<h3>Générer son entité à partir de la ligne de commande</h3>
+					<pre><code data-trim data-noescape class="sh">php bin/console doctrine:generate:entity</code></pre>
+				    </section>
+				    <section>
+					<img src="../assets/img/create-entity.png" alt=""/>
+				    </section>
+				    <section>
+					<img src="../assets/img/create-entity-2.png" alt=""/>
+				    </section>
+				    <section>
+					<h3>Mise à jour de sa base de données</h3>
+					<p>Si aucun shema n'est actif : </p>
+					<pre><code data-trim data-noescape class="sh">php bin/console doctrine:schema:create</code></pre>
+					<p>Si un shema est déjà actif : </p>
+					<pre><code data-trim data-noescape class="sh">php bin/console doctrine:schema:update --force</code></pre>
+				    </section>
+				</section>
+				<section>
+				    <section>
+					<h3>Récupérer les entités depuis la base de données</h3>
+					<pre><code data-trim data-noescape class="php6">
+
+					</code></pre>
+				    </section>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="../assets/lib/js/head.min.js"></script>
+		<script src="../assets/js/reveal.js"></script>
+		<script src="../assets/js/app.js"></script>
+
+
+	</body>
 </html>
