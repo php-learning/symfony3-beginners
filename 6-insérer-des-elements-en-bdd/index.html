@@ -149,6 +149,110 @@
 
 					</section>
 				</section>
+				<section>
+					<section>
+						<h2>Générer des formulaires</h2>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape class="php6">
+							// src/AppBundle/Controller/DefaultController.php
+									namespace AppBundle\Controller;
+
+									use AppBundle\Entity\Article;
+									use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+									use Symfony\Component\HttpFoundation\Request;
+									use Symfony\Component\Form\Extension\Core\Type\TextType;
+									use Symfony\Component\Form\Extension\Core\Type\DateType;
+									use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
+									class DefaultController extends Controller
+									{
+									    public function newAction(Request $request)
+									    {
+
+											 $article = new Article();
+											 $article->setName('Article vraiment Top !');
+											 $article->setContent('Très intéressant!');
+											 $article->setPublished(new \DateTime('tomorrow'));
+											 $article->setCreated(new \DateTime('now'));
+											 $article->setAuthor('Sam');
+
+											 $form = $this->createFormBuilder($article)
+													 ->add('name', TextType::class)
+													 ->add('content', TextType::class)
+													 ->add('published', DateType::class)
+													 ->add('author', TextType::class)
+													 ->add('save', SubmitType::class, array('label' => 'Create Post'))
+													 ->getForm();
+
+											 return $this->render('default/index.html.twig', array(
+													 'form' => $form->createView()
+											 ));
+									    }
+									}
+						</code></pre>
+					</section>
+					<section>
+						<p>Dans Twig</p>
+						<pre><code data-trim data-noescape class="twig">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+						</code></pre>
+					</section>
+					<section>
+						<p>Pour insérer les résultats du formulaire dans la base</p>
+						<pre><code data-trim data-noescape class="php6">
+							// src/AppBundle/Controller/DefaultController.php
+									namespace AppBundle\Controller;
+
+									use AppBundle\Entity\Article;
+									use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+									use Symfony\Component\HttpFoundation\Request;
+									use Symfony\Component\Form\Extension\Core\Type\TextType;
+									use Symfony\Component\Form\Extension\Core\Type\DateType;
+									use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
+									class DefaultController extends Controller
+									{
+									    public function newAction(Request $request)
+									    {
+
+											 $article = new Article();
+											 $article->setName('Article vraiment Top !');
+											 $article->setContent('Très intéressant!');
+											 $article->setPublished(new \DateTime('tomorrow'));
+											 $article->setCreated(new \DateTime('now'));
+											 $article->setAuthor('Sam');
+
+											 $form = $this->createFormBuilder($article)
+													 ->add('name', TextType::class)
+													 ->add('content', TextType::class)
+													 ->add('published', DateType::class)
+													 ->add('author', TextType::class)
+													 ->add('save', SubmitType::class, array('label' => 'Create Post'))
+													 ->getForm();
+
+											 $form->handleRequest($request);
+
+											 if ($form->isSubmitted() && $form->isValid()) {
+
+													 $article = $form->getData();
+
+														$em = $this->getDoctrine()->getManager();
+														$em->persist($article);
+														$em->flush();
+
+											 }
+
+											 return $this->render('default/index.html.twig', array(
+													 'form' => $form->createView()
+											 ));
+									    }
+									}
+						</code></pre>
+					</section>
+				</section>
 			</div>
 		</div>
 
