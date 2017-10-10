@@ -17,7 +17,138 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section>
+					<img data-src="../assets/img/symfony_logo.png">
+					<h2>Apprendre Symfony 3</h2>
+					<h5>Insérer des éléments en BDD</h5>
+				</section>
+				<section>
+					<h2>Programme</h2>
+					<ol>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/1-presentation">Présentation</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/2-creer-son-bundle">Créer son Bundle</a>
+						</li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/3-configurer-son-application">Configurer
+							son application</a></li>
+							<li><a href="https://php-learning.github.io/symfony3-beginners/4-creer-sa-première-page">Créer sa
+								première page</a></li>
+						<li><a href="https://php-learning.github.io/symfony3-beginners/5-creer-sa-premiere-entite">Créer sa
+							première entité</a></li>
+						<li>Insérer
+							quelques éléments en BDD à partir d'un formulaire</li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h2>Les Fixtures</h2>
+						<p>Des classes PHP où on créée des objets pour les persister avec la base de donnée</p>
+					</section>
+					<section>
+						<p>Installer le bundle</p>
+						<pre><code data-trim data-noescape class="sh">composer require --dev doctrine/doctrine-fixtures-bundle</code></pre>
+					</section>
+					<section>
+						<p>Rendre accessible le bundle pour la config de dev</p>
+						<pre><code data-trim data-noescape class="php6">
+							// app/AppKernel.php
+							// ...
 
+							class AppKernel extends Kernel
+							{
+									public function registerBundles()
+									{
+											// ...
+											if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
+													// ...
+													$bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+											}
+
+											return $bundles;
+									}
+
+									// ...
+							}
+						</code></pre>
+
+					</section>
+					<section>
+						<p>Créer les éléments à insérer</p>
+						<pre><code data-trim data-noescape class="php6">
+							// src/AppBundle/DataFixtures/ORM/Fixtures.php
+
+							namespace AppBundle\DataFixtures\ORM;
+
+							use AppBundle\Entity\Article;
+							use Doctrine\Bundle\FixturesBundle\Fixture;
+							use Doctrine\Common\Persistence\ObjectManager;
+
+							class Fixtures extends Fixture
+							{
+									public function load(ObjectManager $manager)
+									{
+									// create 20 articles! Bam!
+									for ($i = 0; $i < 20; $i++) {
+
+											$date = new \DateTime("now");
+
+											$article = new Article();
+											$article->setName('article '.$i);
+											$article->setContent('bmamba');
+											$article->setCreated($date);
+											$article->setPublished($date);
+											$article->setAuthor('yoyoyo');
+											$manager->persist($article);
+									}
+
+									$manager->flush();
+									}
+							}
+						</code></pre>
+
+					</section>
+					<section>
+					<p>Insérer dans le base de donnée</p>
+					<pre><code data-trim data-noescape class="sh">php bin/console doctrine:fixtures:load</code></pre>
+
+
+
+					<p>Pour éviter de purger la base</p>
+					<pre><code data-trim data-noescape class="sh">php bin/console doctrine:fixtures:load --append</code></pre>
+
+
+
+					</section>
+				</section>
+				<section>
+				  <section>
+						<h2>Les relations entre les entités</h2>
+
+				  </section>
+					<section>
+						<pre><code data-trim data-noescape class="php6">
+							// src/AppBundle/AppBundle\Entity\Article;
+
+							/**
+								* @ORM\ManyToOne(targetEntity="Category", inversedBy="articles")
+								* @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+								*/
+							 private $category;
+						 </code></pre>
+
+						 <pre><code data-trim data-noescape class="php6">
+
+							 // src/AppBundle/AppBundle\Entity\Category;
+								use Doctrine\Common\Collections\ArrayCollection;
+
+							/**
+								* @ORM\OneToMany(targetEntity="Article", mappedBy="category")
+								*/
+							 private $articles;
+						</code></pre>
+
+
+					</section>
+				</section>
 			</div>
 		</div>
 
