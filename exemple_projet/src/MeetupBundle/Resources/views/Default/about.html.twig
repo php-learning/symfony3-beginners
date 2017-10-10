@@ -1,0 +1,6 @@
+{% extends 'MeetupBundle::base.html.twig' %}
+{% block body %}
+    {% for item in navigation %}
+        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+{% endblock %}

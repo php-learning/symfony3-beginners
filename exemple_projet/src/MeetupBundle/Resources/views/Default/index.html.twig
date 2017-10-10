@@ -1,0 +1,3 @@
+{% for categorie in categories %}
+    <li>{% include 'MeetupBundle:Default:category.html.twig' with {'category':categorie} %}</li>
+{% endfor %}
