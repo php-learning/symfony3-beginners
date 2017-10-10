@@ -49,6 +49,13 @@ class Category
      */
     private $updated;
 
+    /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="Article", mappedBy="category")
+     */
+    private $articles;
+
 
     /**
      * Get id
@@ -155,5 +162,53 @@ class Category
     {
         return $this->updated;
     }
-}
 
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles)
+    {
+        $this->articles = $articles;
+    }
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->articles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add article
+     *
+     * @param \MeetupBundle\Entity\Article $article
+     *
+     * @return Category
+     */
+    public function addArticle(\MeetupBundle\Entity\Article $article)
+    {
+        $this->articles[] = $article;
+
+        return $this;
+    }
+
+    /**
+     * Remove article
+     *
+     * @param \MeetupBundle\Entity\Article $article
+     */
+    public function removeArticle(\MeetupBundle\Entity\Article $article)
+    {
+        $this->articles->removeElement($article);
+    }
+}

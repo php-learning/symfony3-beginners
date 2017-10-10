@@ -1,6 +1,7 @@
 <?php
 
 namespace MeetupBundle\Repository;
+use MeetupBundle\Entity\Category;
 
 /**
  * ArticleRepository
